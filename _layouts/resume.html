@@ -53,12 +53,16 @@
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Experience</h2>
+          <h2>Internships</h2>
         </header>
 
         {% for job in site.data.experience %}
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
           <h3 class="resume-item-title" itemprop="name">{{ job.company }}</h3>
+          {% if job.location %}
+          <h4 class="resume-item-details" itemprop="description"><i>Location:</i> {{ job.location }}</h4>
+          {% endif %}
+          <h4 class="resume-item-details" itemprop="description"><i>Supervisor:</i> {{ job.supervisor }}</h4>
           <h4 class="resume-item-details" itemprop="description">{{ job.position }} &bull; {{ job.duration }}</h4>
           <p class="resume-item-copy">{{ job.summary }}</p>
         </div><!-- end of resume-item -->
@@ -67,6 +71,43 @@
       </section>
       <!-- end Experience -->
       {% endif %}
+
+      <!-- begin Experience -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Other Experience</h2>
+        </header>
+
+        {% for job in site.data.more-experience %}
+        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+          <h3 class="resume-item-title" itemprop="name">{{ job.project }}</h3>
+          <h4 class="resume-item-details" itemprop="description"><i>Supervisor:</i> {{ job.supervisor }}</h4>
+          <h4 class="resume-item-details" itemprop="description">{{ job.duration }}</h4>
+          <p class="resume-item-copy">{{ job.summary }}</p>
+        </div><!-- end of resume-item -->
+        {% endfor %}
+
+      </section>
+      <!-- end Experience -->
+
+      <!-- begin Experience -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Summer Schools</h2>
+        </header>
+
+        {% for job in site.data.summerschools %}
+        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+          <h3 class="resume-item-title" itemprop="name">{{ job.name }}</h3>
+          <h4 class="resume-item-details" itemprop="description"><i>Location:</i> {{ job.location }} &bull; {{ job.duration }}</h4>
+          <p class="resume-item-copy">{{ job.summary }}</p>
+        </div><!-- end of resume-item -->
+        {% endfor %}
+
+      </section>
+      <!-- end Experience -->
 
 
       {% if site.resume_section_education %}

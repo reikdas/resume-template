@@ -1,0 +1,5 @@
+- project: ROOT, Cling, Clang
+  supervisor: Dr. Vassil Vassilev (Princeton University)
+  duration: October, 2019 &mdash; Present
+  summary: <ul class="resume-item-list"><li>Updated Cling's installer to build Cling using LLVM binaries.</li><li>Upstreaming ROOT team's patches to Clang.</li><li>Several small tweaks/commits to ROOT.</li></ul>
+
